@@ -3,7 +3,7 @@ from queue import Empty
 from django.shortcuts import render
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from .forms import SignupDonatorForm, LoginDonatorForm
+from donator.forms import SignupDonatorForm, LoginDonatorForm
 from home.models import PersonTable
 from organizor.models import EventTable
 from .models import  DonatorTable, DonateTable, FundTable
