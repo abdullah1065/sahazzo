@@ -15,7 +15,11 @@ body {
 
 
 }
-
+.WebContainer{
+    width:100%;
+    min-width:1000px;
+    height:auto;
+}
 .center1 {
 	display: block;
 	margin-left: auto;
