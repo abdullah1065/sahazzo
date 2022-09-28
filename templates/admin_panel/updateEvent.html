@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css?{% now "U" %}">
+    <link rel="stylesheet" type="text/css" href="/static/css/style2.css?{% now "U" %}">
+	<link href='http://fonts.googleapis.com/css?family=Lora|Satisfy:100,300,400,700,900' rel='stylesheet' type='text/css'>
+	
+	<title>Event Update</title>
+	<style>
+		table, th, td {
+		  border:1px solid black;
+		}
+		.button {
+		border: none;
+		color: rgb(255, 254, 254);
+		padding: 10px 20px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin-left: 42%;
+		transition-duration: 0.4s;
+		cursor: pointer;
+	  }
+
+	  .button1 {
+		background-color: #4c5baf;
+		color: rgb(255, 255, 255);
+		border: 2px solid #534caf;
+	  }
+	  
+	  .button1:hover{
+		background-color: #3d3888;
+		color: white;
+		box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+	  }
+	  #content{
+		width:100%;
+		background-color: rgb(210, 211, 210); 
+		padding: 2%;
+		margin-top: 1%;
+		margin-bottom: 1%;
+		display: none;
+	  }
+	  input[type=submit] {
+		background-color: #464542;
+		color: #ffffff;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 1rem 3rem;
+		margin-left: 20%;
+		font-size: 1.6rem;
+		border:0;
+		border:1px transparent rgb(233, 228, 228);
+	}
+	input[type=text0],
+	textarea {
+		color: #000000;
+		width: auto;
+		padding:9px 1px;
+		border-radius:5px;
+		border:2px solid rgb(10, 10, 10);
+		background-color:rgb(245, 236, 240);
+		
+	}
+	  </style>
+
+	
+</head>
+
+<body>
+	{% for value in database_dict.values %}
+		<div class="topnav1">
+			<a href="{% url 'manageEvents' %}">Manage Events Database</a>
+			<a class="active" href="#">Update Section</a>
+		</div>
+
+		
+		
+		<br><br><br><br>
+		<h2 class="heading-secondary2">
+			<div class="u-align-center u-margin-bottom-big">
+				Data&nbsp; Update&nbsp; Section
+			</div>
+		</h2>
+		
+
+		
+		<div class="amenities3-section">
+			<form method="post" action="#">
+				{% csrf_token %}
+				<div class="row">
+					<div class="col-1-of-4">
+						<h3 class="heading-tertiary u-margin-bottom-small">
+								Event ID
+						</h3>
+						<p class="paragraph">
+							{{value.0}}
+						</p>
+					</div>
+					<div class="col-1-of-4">
+						<h3 class="heading-tertiary u-margin-bottom-small">
+							Event Name
+						</h3>
+						<input type = "text0" class = "paragraph" name="EVENT_NAME" value={{value.1}}>
+					</div>
+
+				
+					<div class="col-1-of-4">
+						<h3 class="heading-tertiary u-margin-bottom-small">
+							Location
+						</h3>
+						<select class = "paragraph" name = "LOCATION">
+							<option value= {{value.2}}>{{value.2}}</option>
+							<option>Bagerhat</option>
+							<option>Bandarban</option>
+							<option>Barguna</option>
+							<option>Barisal</option>
+							<option>Bhola</option>
+							<option>Bogra</option>
+							<option>Brahmanbaria</option>
+							<option>Chandpur</option>
+							<option>Chittagong</option>
+							<option>Chuadanga</option>
+							<option>Comilla</option>
+							<option>Cox`s Bazar</option>
+							<option>Dhaka</option>
+							<option>Dinajpur</option>
+							<option>Faridpur</option>
+							<option>Feni</option>
+							<option>Gaibandha</option>
+							<option>Gazipur</option>
+							<option>Gopalganj</option>
+							<option>Habiganj</option>
+							<option>Jaipurhat</option>
+							<option>Jamalpur</option>
+							<option>Jessore</option>
+							<option>Jhalakati</option>
+							<option>Jhenaidah</option>
+							<option>Khagrachari</option>
+							<option>Khulna</option>
+							<option>Kishoreganj</option>
+							<option>Kurigram</option>
+							<option>Kushtia</option>
+							<option>Lakshmipur</option>
+							<option>Lalmonirhat</option>
+							<option>Madaripur</option>
+							<option>Magura</option>
+							<option>Manikganj</option>
+							<option>Meherpur</option>
+							<option>Moulvibazar</option>
+							<option>Munshiganj</option>
+							<option>Mymensingh</option>
+							<option>Naogaon</option>
+							<option>Narail</option>
+							<option>Narayanganj</option>
+							<option>Narsingdi</option>
+							<option>Natore</option>
+							<option>Nawabganj</option>
+							<option>Netrakona</option>
+							<option>Nilphamari</option>
+							<option>Noakhali</option>
+							<option>Pabna</option>
+							<option>Panchagarh</option>
+							<option>Parbattya Chattagram</option>
+							<option>Patuakhali</option>
+							<option>Pirojpur</option>
+							<option>Rajbari</option>
+							<option>Rajshahi</option>
+							<option>Rangpur</option>
+							<option>Satkhira</option>
+							<option>Shariatpur</option>
+							<option>Sherpur</option>
+							<option>Sirajganj</option>
+							<option>Sunamganj</option>
+							<option>Sylhet</option>
+							<option>Tangail</option>
+							<option>Thakurgaon</option>
+						</select>
+					</div>
+					<div class="col-1-of-4">
+						<h3 class="heading-tertiary u-margin-bottom-small">
+							Budget
+						</h3>
+						<input type = "text0" class = "paragraph" name="BUDGET" value={{value.3}}>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-1-of-4">
+						<h3 class="heading-tertiary u-margin-bottom-small">
+							Created By
+						</h3>
+						<input type = "text0" class = "paragraph" name="CREATED_BY" value={{value.4}}>
+					</div>
+					<div class="col-1-of-4">
+						<h3 class="heading-tertiary u-margin-bottom-small">
+							Current Fund
+						</h3>
+						<p class="paragraph">
+							{{value.5}} BDT
+						</p>
+					</div>
+				
+					<div class="col-1-of-4">
+						<h3 class="heading-tertiary u-margin-bottom-small">
+							Shop
+						</h3>
+						<select class = "paragraph" name = "SHOP">
+							<option value= {{value.6}}>{{value.6}}</option>
+							<option>Shwapno</option>
+                            <option>Aagora</option>
+                            <option>Lazz-Pharma</option>
+						</select>
+					</div>
+				</div>
+				<div class="row">
+					&nbsp;&nbsp;&nbsp;
+					<div class="col-4-of-4">
+						<input type="submit" class="btn-rectangular4" value = "Update"</a>
+					</div>
+					
+				</div>
+			</form>
+		</div>
+	{% endfor %}
+	
+	
+</body>
+</html>

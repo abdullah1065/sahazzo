@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css?{% now "U" %}">
+    <link rel="stylesheet" type="text/css" href="/static/css/style2.css?{% now "U" %}">
+	<link href='http://fonts.googleapis.com/css?family=Lora|Satisfy:100,300,400,700,900' rel='stylesheet' type='text/css'>
+	
+	<title>Update Person</title>
+	<style>
+		table, th, td {
+		  border:1px solid black;
+		}
+		.button {
+		border: none;
+		color: rgb(255, 254, 254);
+		padding: 10px 20px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin-left: 42%;
+		transition-duration: 0.4s;
+		cursor: pointer;
+	  }
+
+	  .button1 {
+		background-color: #4c5baf;
+		color: rgb(255, 255, 255);
+		border: 2px solid #534caf;
+	  }
+	  
+	  .button1:hover{
+		background-color: #3d3888;
+		color: white;
+		box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+	  }
+	  #content{
+		width:100%;
+		background-color: rgb(210, 211, 210); 
+		padding: 2%;
+		margin-top: 1%;
+		margin-bottom: 1%;
+		display: none;
+	  }
+	  input[type=submit] {
+		background-color: #464542;
+		color: #ffffff;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 1rem 3rem;
+		margin-left: 20%;
+		font-size: 1.6rem;
+		border:0;
+		border:1px transparent rgb(233, 228, 228);
+	}
+	input[type=text0],
+	textarea {
+		color: #000000;
+		width: auto;
+		padding:9px 1px;
+		border-radius:5px;
+		border:2px solid rgb(10, 10, 10);
+		background-color:rgb(245, 236, 240);
+		
+	}
+	  </style>
+
+	
+</head>
+
+<body>
+	{% for value in database_dict.values %}
+		<div class="topnav1">
+			{% if 'D' in value.0 %}
+				<a href="{% url 'donatorDatabase' %}">Donator Database</a>
+			{% elif 'O' in value.0 %}
+				<a href="{% url 'organizorDatabase' %}">Organizor Database</a>
+			{% elif 'V' in value.0 %}
+				<a href="{% url 'volunteerDatabase' %}">Volunteer Database</a>
+			{% endif %}
+			<a class="active" href="#">Update Section</a>
+		</div>
+
+		
+		
+		<br><br><br><br>
+		<h2 class="heading-secondary2">
+			<div class="u-align-center u-margin-bottom-big">
+				Data&nbsp; Update&nbsp; Section
+			</div>
+		</h2>
+		
+		<div class="amenities3-section">
+			<form method="post" action="#">
+				{% csrf_token %}
+				<div class="row">
+					<div class="col-1-of-4">
+						<h3 class="heading-tertiary u-margin-bottom-small">
+							{% if 'D' in value.0 %}
+								Donator ID
+							{% elif 'O' in value.0 %}
+								Organizor ID
+							{% elif 'V' in value.0 %}
+								Volunteer ID
+							{% endif %}
+							
+						</h3>
+						<p class="paragraph">
+							{{value.0}}
+						</p>
+					</div>
+					<div class="col-1-of-4">
+						<h3 class="heading-tertiary u-margin-bottom-small">
+							First Name
+						</h3>
+						<input type = "text0" class = "paragraph" name="FIRST_NAME" value={{value.1}}>
+					</div>
+
+					<div class="col-1-of-4">
+						<h3 class="heading-tertiary u-margin-bottom-small">
+							Last Name
+						</h3>
+						<input type = "text0" class = "paragraph" name="LAST_NAME" value={{value.2}}>
+					</div>
+					<div class="col-1-of-4">
+						<h3 class="heading-tertiary u-margin-bottom-small">
+							NID
+						</h3>
+						<input type = "text0" class = "paragraph" name="NID" value={{value.3}}>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-1-of-4">
+						<h3 class="heading-tertiary u-margin-bottom-small">
+							Contact
+						</h3>
+						<input type = "text0" class = "paragraph" name="CONTACT" value={{value.4}}>
+					</div>
+					<div class="col-1-of-4">
+						<h3 class="heading-tertiary u-margin-bottom-small">
+							EMAIL
+						</h3>
+						<input type = "text0" class = "paragraph" name="EMAIL" value={{value.5}}>
+					</div>
+					{% if 'V' in value.0 %}
+						<div class="col-1-of-4">
+							<h3 class="heading-tertiary u-margin-bottom-small">
+								Status
+							</h3>
+							
+							<select  type = "text0" class = "paragraph"  name = "STATUS" required>
+								<option value = 'Not in volunteering'>Not in volunteering</option>
+								<option value = 'In volunteering'>In volunteering</option>
+							</select>
+							
+						</div>
+						<div class="col-1-of-4">
+							<h3 class="heading-tertiary u-margin-bottom-small">
+								Voluntary For
+							</h3>
+							<select  type = "text0" class = "paragraph"  name = "VOLUNTARY" required>
+								{% for i in value.8 %}
+									<option value = {{i}}>{{i}}</option>
+								{%endfor%}
+						</div>
+					{% endif %}
+				</div>
+				<div class="row">
+					&nbsp;&nbsp;&nbsp;
+					<div class="col-4-of-4">
+						<input type="submit" class="btn-rectangular4" value = "Update"</a>
+					</div>
+					
+				</div>
+			</form>
+		</div>
+	{% endfor %}
+	
+	
+</body>
+</html>
