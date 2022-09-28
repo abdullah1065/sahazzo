@@ -1,0 +1,1 @@
+web: gunicorn d_sahazzo.wsgi --log-file -
