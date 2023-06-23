@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-6og4shr91rm1jqey_ze6c8htn^)vbbe^bzu=+k7+fp!zvlp_lc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['sahazzo.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['sahazzo.vercel.app', '127.0.0.1']
 
 
 # Application definition
