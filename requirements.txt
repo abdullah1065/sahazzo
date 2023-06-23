@@ -6,3 +6,4 @@ sqlparse==0.4.2
 tzdata==2022.2
 whitenoise==6.2.0
 favicon==0.7.0
+firebase-admin
