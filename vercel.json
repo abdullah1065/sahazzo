@@ -1,14 +1,14 @@
 {
 	"builds":[
 		{
-			"src":"/manage.py",
+			"src":"d_sahazzo/wsgi.py",
 			"use":"@vercel/python"
 		}
 	],
 	"routes":[
 		{
 			"src":"/(.*)",
-			"dest":"/manage.py"
+			"dest":"d_sahazzo/wsgi.py"
 		}
 
 	]
