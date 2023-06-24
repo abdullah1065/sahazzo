@@ -1,4 +1,4 @@
-# sahazzo
+# Sahazzo
 <h3> A wonderful platform for cashless Donating & Volunteering work to Social Organizations that strive to make the world a better place.  </h3>
 
 Website Link: https://sahazzo.vercel.app
