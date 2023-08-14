@@ -161,8 +161,8 @@ h2 {
 /*** HEADER SECTION ****/
 
 header {
-	background-image:-webkit-linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.7)),url(img/home2.jpg);
-	background-image:linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.7)),url(img/home2.jpg);
+	background-image:-webkit-linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.7)),url(/static/img/home2.jpg);
+	background-image:linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.7)),url(/static/img/home2.jpg);
 	height:100vh;
 	background-size:cover;
 	background-position:center;
@@ -377,7 +377,7 @@ header {
 }
 .login-sectionD {
 	
-	background-image:-webkit-linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.7)),url(img/donator_login.jpg);
+	background-image:-webkit-linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.7)),url(/static/img/donator_login.jpg);
 	height:100vh;
 	background-size:cover;
 	background-position:center;
@@ -387,7 +387,7 @@ header {
 
 .login-sectionO {
 	
-	background-image:-webkit-linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.7)),url(img/organizor_login.jpeg);
+	background-image:-webkit-linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.7)),url(/static/img/organizor_login.jpeg);
 	height:100vh;
 	background-size:cover;
 	background-position:center;
@@ -397,7 +397,7 @@ header {
 
 .login-sectionV {
 	
-	background-image:-webkit-linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.7)),url(img/volunteer_login.jpeg);
+	background-image:-webkit-linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.7)),url(/static/img/volunteer_login.jpeg);
 	height:100vh;
 	background-size:cover;
 	background-position:center;
@@ -407,7 +407,7 @@ header {
 
 .login-sectionA {
 	
-	background-image:-webkit-linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.7)),url(img/admin_login.jpg);
+	background-image:-webkit-linear-gradient(rgba(0,0,0,.3),rgb(0,0,0,.7)),url(/static/img/admin_login.jpg);
 	height:100vh;
 	background-size:cover;
 	background-position:center;
