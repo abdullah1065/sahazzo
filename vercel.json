@@ -11,5 +11,12 @@
 			"dest":"d_sahazzo/wsgi.py"
 		}
 
-	]
+	],
+
+	"rewrites": [
+		{
+		  "source": "/static/(.*)",
+		  "destination": "/d_sahazzo/$1"
+		}
+	  ]
 }

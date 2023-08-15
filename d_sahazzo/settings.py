@@ -30,6 +30,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
+STATICFILES_STORAGE = ['whitenoise.storage.CompressedManifestStaticFilesStorage',]
+
 
 # Application definition
 
@@ -51,6 +53,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'd_sahazzo.urls'
@@ -119,8 +122,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [STATIC_DIR,]
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [STATIC_DIR, os.path.join(BASE_DIR, "static"),]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
