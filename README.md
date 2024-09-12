@@ -17,7 +17,7 @@ SAHAZZO is a donation management system designed to streamline the process of co
     - **Attributes**:
         - First Name
         - Last Name
-        - NID ID
+        - NID
         - Phone Number
         - Email
         - Password
@@ -28,7 +28,7 @@ SAHAZZO is a donation management system designed to streamline the process of co
     - **Attributes**:
         - First Name
         - Last Name
-        - NID ID
+        - NID
         - Phone Number
         - Email
         - Password
@@ -39,7 +39,7 @@ SAHAZZO is a donation management system designed to streamline the process of co
     - **Attributes**:
         - First Name
         - Last Name
-        - NID ID
+        - NID
         - Phone Number
         - Email
         - Password
@@ -131,15 +131,30 @@ SAHAZZO is a donation management system designed to streamline the process of co
     cd sahazzo
     ```
 
-3. Install dependencies:
+3. Set up a virtual environment:
     ```bash
-    composer install
+    python -m venv env
+    source env/bin/activate  # On Windows: env\Scripts\activate
     ```
 
-4. Set up the database:
-    - Import the SQL file in your database management system (e.g., phpMyAdmin).
-
-5. Run the application:
+4. Install dependencies:
     ```bash
-    php -S localhost:8000
+    pip install -r requirements.txt
     ```
+
+5. Apply migrations:
+    ```bash
+    python manage.py migrate
+    ```
+
+6. Create a superuser to access the admin panel:
+    ```bash
+    python manage.py createsuperuser
+    ```
+
+7. Run the Django development server:
+    ```bash
+    python manage.py runserver
+    ```
+
+8. Access the site at `http://127.0.0.1:8000/`.
